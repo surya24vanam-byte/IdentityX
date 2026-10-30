@@ -8,7 +8,7 @@ def create_app(config_class=Config):
 
     # Initialize extensions
     db.init_app(app)
-    cors.init_app(app, resources={r"/api/*": {"origins": "*"}}, supports_credentials=True)
+    cors.init_app(app, resources={r"/api/*": {"origins": "*"}})
 
     # Register blueprints
     from app.routes import auth_bp, user_bp, credential_bp, verification_bp, admin_bp
